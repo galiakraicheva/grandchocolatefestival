@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>External Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @external_users.each do |external_user| %>
+      <tr>
+        <td><%= external_user.email %></td>
+        <td><%= link_to 'Show', external_user %></td>
+        <td><%= link_to 'Edit', edit_external_user_path(external_user) %></td>
+        <td><%= link_to 'Destroy', external_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New External User', new_external_user_path %>

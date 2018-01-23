@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stand_number: 
+  need_chairs: false
+  need_table: false
+  event_contact_person_name: MyString
+  event_contact_person_phone: MyString
+  hygiene_person: MyString
+  invitation_number: 1
+  correspondence_address: MyString
+  badges_number: 1
+  participate_exhibit: false
+  exhibit_items: MyString
+  participate_lottary: false
+  lottary_items: MyString
+  participate_sampling: MyString
+  sampling_hours: MyString
+  electricity_consumption: MyString
+  plugs_number: 1
+  car_registration_number: MyString
+  printed_label: MyString
+  gcf_website_name: MyString
+  gcf_website_url: MyString
+  gcf_website_description: MyString
+  gcf_website_address: MyString
+  participate_presentation: false
+  presentation_topic: MyString
+  presentation_speaker: MyString
+  participant_comments: MyText
+  terms_of_service: false
+
+two:
+  stand_number: 
+  need_chairs: false
+  need_table: false
+  event_contact_person_name: MyString
+  event_contact_person_phone: MyString
+  hygiene_person: MyString
+  invitation_number: 1
+  correspondence_address: MyString
+  badges_number: 1
+  participate_exhibit: false
+  exhibit_items: MyString
+  participate_lottary: false
+  lottary_items: MyString
+  participate_sampling: MyString
+  sampling_hours: MyString
+  electricity_consumption: MyString
+  plugs_number: 1
+  car_registration_number: MyString
+  printed_label: MyString
+  gcf_website_name: MyString
+  gcf_website_url: MyString
+  gcf_website_description: MyString
+  gcf_website_address: MyString
+  participate_presentation: false
+  presentation_topic: MyString
+  presentation_speaker: MyString
+  participant_comments: MyText
+  terms_of_service: false

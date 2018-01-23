@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  common_name: MyString
+  website: MyString
+  fb_page: MyString
+  description: MyString
+  type: 
+  comments: MyString
+  country: MyString
+
+two:
+  common_name: MyString
+  website: MyString
+  fb_page: MyString
+  description: MyString
+  type: 
+  comments: MyString
+  country: MyString

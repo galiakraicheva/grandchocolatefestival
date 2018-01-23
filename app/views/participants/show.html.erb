@@ -1,0 +1,144 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stand number:</strong>
+  <%= @participant.stand_number %>
+</p>
+
+<p>
+  <strong>Need chairs:</strong>
+  <%= @participant.questionnaire&.need_chairs %>
+</p>
+
+<p>
+  <strong>Need table:</strong>
+  <%= @participant.questionnaire&.need_table %>
+</p>
+
+<p>
+  <strong>Event contact person name:</strong>
+  <%= @participant.questionnaire&.event_contact_person_name %>
+</p>
+
+<p>
+  <strong>Event contact person phone:</strong>
+  <%= @participant.questionnaire&.event_contact_person_phone %>
+</p>
+
+<p>
+  <strong>Hygiene person:</strong>
+  <%= @participant.questionnaire&.hygiene_person %>
+</p>
+
+<p>
+  <strong>Invitation number:</strong>
+  <%= @participant.questionnaire&.invitation_number %>
+</p>
+
+<p>
+  <strong>Correspondence address:</strong>
+  <%= @participant.questionnaire&.correspondence_address %>
+</p>
+
+<p>
+  <strong>Badges number:</strong>
+  <%= @participant.questionnaire&.badges_number %>
+</p>
+
+<p>
+  <strong>Participate exhibit:</strong>
+  <%= @participant.questionnaire&.participate_exhibit %>
+</p>
+
+<p>
+  <strong>Exhibit items:</strong>
+  <%= @participant.questionnaire&.exhibit_items %>
+</p>
+
+<p>
+  <strong>Participate lottary:</strong>
+  <%= @participant.questionnaire&.participate_lottary %>
+</p>
+
+<p>
+  <strong>Lottary items:</strong>
+  <%= @participant.questionnaire&.lottary_items %>
+</p>
+
+<p>
+  <strong>Participate sampling:</strong>
+  <%= @participant.questionnaire&.participate_sampling %>
+</p>
+
+<p>
+  <strong>Sampling hours:</strong>
+  <%= @participant.questionnaire&.sampling_hours %>
+</p>
+
+<p>
+  <strong>Electricity consumption:</strong>
+  <%= @participant.questionnaire&.electricity_consumption %>
+</p>
+
+<p>
+  <strong>Plugs number:</strong>
+  <%= @participant.questionnaire&.plugs_number %>
+</p>
+
+<p>
+  <strong>Car registration number:</strong>
+  <%= @participant.questionnaire&.car_registration_number %>
+</p>
+
+<p>
+  <strong>Printed label:</strong>
+  <%= @participant.questionnaire&.printed_label %>
+</p>
+
+<p>
+  <strong>Gcf website name:</strong>
+  <%= @participant.questionnaire&.gcf_website_name %>
+</p>
+
+<p>
+  <strong>Gcf website url:</strong>
+  <%= @participant.questionnaire&.gcf_website_url %>
+</p>
+
+<p>
+  <strong>Gcf website description:</strong>
+  <%= @participant.questionnaire&.gcf_website_description %>
+</p>
+
+<p>
+  <strong>Gcf website address:</strong>
+  <%= @participant.questionnaire&.gcf_website_address %>
+</p>
+
+<p>
+  <strong>Participate presentation:</strong>
+  <%= @participant.questionnaire&.participate_presentation %>
+</p>
+
+<p>
+  <strong>Presentation topic:</strong>
+  <%= @participant.questionnaire&.presentation_topic %>
+</p>
+
+<p>
+  <strong>Presentation speaker:</strong>
+  <%= @participant.questionnaire&.presentation_speaker %>
+</p>
+
+<p>
+  <strong>Participant comments:</strong>
+  <%= @participant.questionnaire&.participant_comments %>
+</p>
+
+<p>
+  <strong>Terms of service:</strong>
+  <%= @participant.questionnaire&.terms_of_service %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>

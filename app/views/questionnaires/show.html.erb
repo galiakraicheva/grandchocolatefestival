@@ -1,0 +1,140 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Need chairs:</strong>
+  <%= @questionnaire.need_chairs %>
+</p>
+
+<p>
+  <strong>Need table:</strong>
+  <%= @questionnaire.need_table %>
+</p>
+
+<p>
+  <strong>Event contact person name:</strong>
+  <%= @questionnaire.event_contact_person_name %>
+</p>
+
+<p>
+  <strong>Event contact person phone:</strong>
+  <%= @questionnaire.event_contact_person_phone %>
+</p>
+
+<p>
+  <strong>Hygiene person:</strong>
+  <%= @questionnaire.hygiene_person %>
+</p>
+
+<p>
+  <strong>Invitation number:</strong>
+  <%= @questionnaire.invitation_number %>
+</p>
+
+<p>
+  <strong>Correspondence address:</strong>
+  <%= @questionnaire.correspondence_address %>
+</p>
+
+<p>
+  <strong>Badges number:</strong>
+  <%= @questionnaire.badges_number %>
+</p>
+
+<p>
+  <strong>Participate exhibit:</strong>
+  <%= @questionnaire.participate_exhibit %>
+</p>
+
+<p>
+  <strong>Exhibit items:</strong>
+  <%= @questionnaire.exhibit_items %>
+</p>
+
+<p>
+  <strong>Participate lottary:</strong>
+  <%= @questionnaire.participate_lottary %>
+</p>
+
+<p>
+  <strong>Lottary items:</strong>
+  <%= @questionnaire.lottary_items %>
+</p>
+
+<p>
+  <strong>Participate sampling:</strong>
+  <%= @questionnaire.participate_sampling %>
+</p>
+
+<p>
+  <strong>Sampling hours:</strong>
+  <%= @questionnaire.sampling_hours %>
+</p>
+
+<p>
+  <strong>Electricity consumption:</strong>
+  <%= @questionnaire.electricity_consumption %>
+</p>
+
+<p>
+  <strong>Plugs number:</strong>
+  <%= @questionnaire.plugs_number %>
+</p>
+
+<p>
+  <strong>Car registration number:</strong>
+  <%= @questionnaire.car_registration_number %>
+</p>
+
+<p>
+  <strong>Printed label:</strong>
+  <%= @questionnaire.printed_label %>
+</p>
+
+<p>
+  <strong>Gcf website name:</strong>
+  <%= @questionnaire.gcf_website_name %>
+</p>
+
+<p>
+  <strong>Gcf website url:</strong>
+  <%= @questionnaire.gcf_website_url %>
+</p>
+
+<p>
+  <strong>Gcf website description:</strong>
+  <%= @questionnaire.gcf_website_description %>
+</p>
+
+<p>
+  <strong>Gcf website address:</strong>
+  <%= @questionnaire.gcf_website_address %>
+</p>
+
+<p>
+  <strong>Participate presentation:</strong>
+  <%= @questionnaire.participate_presentation %>
+</p>
+
+<p>
+  <strong>Presentation topic:</strong>
+  <%= @questionnaire.presentation_topic %>
+</p>
+
+<p>
+  <strong>Presentation speaker:</strong>
+  <%= @questionnaire.presentation_speaker %>
+</p>
+
+<p>
+  <strong>Participant comments:</strong>
+  <%= @questionnaire.participant_comments %>
+</p>
+
+<p>
+  <strong>Terms of service:</strong>
+  <%= @questionnaire.terms_of_service %>
+</p>
+
+<% unless @questionnaire.new_record? %>
+<%=link_to 'Edit', edit_questionnaire_path(id: @participant.access_token) %> |
+<% end %>

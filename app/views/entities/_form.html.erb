@@ -1,0 +1,72 @@
+<%= form_with(model: entity, local: true) do |form| %>
+  <% if entity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
+
+      <ul>
+      <% entity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :common_name %>
+    <%= form.text_field :common_name, id: :entity_common_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website, id: :entity_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fb_page %>
+    <%= form.text_field :fb_page, id: :entity_fb_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description, id: :entity_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :progress %>
+    <%= form.text_field :progress, id: :entity_progress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_participant %>
+    <%= form.check_box :is_participant, id: :entity_is_participant %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_participant %>
+    <%= form.check_box :is_sponsor, id: :entity_is_sponsor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_media %>
+    <%= form.check_box :is_media, id: :entity_is_media %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_partner %>
+    <%= form.check_box :is_partner, id: :entity_is_partner %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_field :comments, id: :entity_comments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country, id: :entity_country %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

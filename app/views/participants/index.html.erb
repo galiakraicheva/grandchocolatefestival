@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+<%
+body = "Zdraveite, edi kakvo si.
+
+Това е кирилица. "
+
+mail_data = {subject: "Pokana za uchastie на кирилица.", body: body}
+%>
+<a href="mailto:info@melodica-events.com?subject=test%20messed&body=testt%0amessed"> Test Mail Link</a>
+<a href="mailto:info@melodica-events.com?<%= mail_data.to_param.gsub("+", "%20") %>"> Test Mail Link</a>
+
+<h1>Participants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stand number</th>
+      <th>Need chairs</th>
+      <th>Need table</th>
+      <th>Event contact person name</th>
+      <th>Event contact person phone</th>
+      <th>Hygiene person</th>
+      <th>Invitation number</th>
+      <th>Correspondence address</th>
+      <th>Badges number</th>
+      <th>Participate exhibit</th>
+      <th>Exhibit items</th>
+      <th>Participate lottary</th>
+      <th>Lottary items</th>
+      <th>Participate sampling</th>
+      <th>Sampling hours</th>
+      <th>Electricity consumption</th>
+      <th>Plugs number</th>
+      <th>Car registration number</th>
+      <th>Printed label</th>
+      <th>Gcf website name</th>
+      <th>Gcf website url</th>
+      <th>Gcf website description</th>
+      <th>Gcf website address</th>
+      <th>Participate presentation</th>
+      <th>Presentation topic</th>
+      <th>Presentation speaker</th>
+      <th>Participant comments</th>
+      <th>Terms of service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participants.each do |participant| %>
+      <tr>
+        <td><%= participant.stand_number %></td>
+        <td><%= participant.questionnaire&.need_chairs %></td>
+        <td><%= participant.questionnaire&.need_table %></td>
+        <td><%= participant.questionnaire&.event_contact_person_name %></td>
+        <td><%= participant.questionnaire&.event_contact_person_phone %></td>
+        <td><%= participant.questionnaire&.hygiene_person %></td>
+        <td><%= participant.questionnaire&.invitation_number %></td>
+        <td><%= participant.questionnaire&.correspondence_address %></td>
+        <td><%= participant.questionnaire&.badges_number %></td>
+        <td><%= participant.questionnaire&.participate_exhibit %></td>
+        <td><%= participant.questionnaire&.exhibit_items %></td>
+        <td><%= participant.questionnaire&.participate_lottary %></td>
+        <td><%= participant.questionnaire&.lottary_items %></td>
+        <td><%= participant.questionnaire&.participate_sampling %></td>
+        <td><%= participant.questionnaire&.sampling_hours %></td>
+        <td><%= participant.questionnaire&.electricity_consumption %></td>
+        <td><%= participant.questionnaire&.plugs_number %></td>
+        <td><%= participant.questionnaire&.car_registration_number %></td>
+        <td><%= participant.questionnaire&.printed_label %></td>
+        <td><%= participant.questionnaire&.gcf_website_name %></td>
+        <td><%= participant.questionnaire&.gcf_website_url %></td>
+        <td><%= participant.questionnaire&.gcf_website_description %></td>
+        <td><%= participant.questionnaire&.gcf_website_address %></td>
+        <td><%= participant.questionnaire&.participate_presentation %></td>
+        <td><%= participant.questionnaire&.presentation_topic %></td>
+        <td><%= participant.questionnaire&.presentation_speaker %></td>
+        <td><%= participant.questionnaire&.participant_comments %></td>
+        <td><%= participant.questionnaire&.terms_of_service %></td>
+        <td><%= link_to "Questionnaire", edit_questionnaire_path(id: participant.access_token) %>
+        <td><%= link_to 'Show', participant %></td>
+        <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
+        <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Participant', new_participant_path %>

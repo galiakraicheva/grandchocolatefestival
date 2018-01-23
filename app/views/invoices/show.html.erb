@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firm one name:</strong>
+  <%= @invoice.firm_one_name %>
+</p>
+
+<p>
+  <strong>Firm one vat:</strong>
+  <%= @invoice.firm_one_vat %>
+</p>
+
+<p>
+  <strong>Firm one eik:</strong>
+  <%= @invoice.firm_one_eik %>
+</p>
+
+<p>
+  <strong>Firm one address:</strong>
+  <%= @invoice.firm_one_address %>
+</p>
+
+<p>
+  <strong>Firm one mol:</strong>
+  <%= @invoice.firm_one_mol %>
+</p>
+
+<p>
+  <strong>Firm two name:</strong>
+  <%= @invoice.firm_two_name %>
+</p>
+
+<p>
+  <strong>Firm two vat:</strong>
+  <%= @invoice.firm_two_vat %>
+</p>
+
+<p>
+  <strong>Firm two eik:</strong>
+  <%= @invoice.firm_two_eik %>
+</p>
+
+<p>
+  <strong>Firm two address:</strong>
+  <%= @invoice.firm_two_address %>
+</p>
+
+<p>
+  <strong>Firm two mol:</strong>
+  <%= @invoice.firm_two_mol %>
+</p>
+
+<p>
+  <strong>Invoice number:</strong>
+  <%= @invoice.invoice_number %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @invoice.paid %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

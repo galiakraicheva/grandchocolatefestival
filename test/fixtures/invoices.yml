@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  firm_one_name: MyString
+  firm_one_vat: MyString
+  firm_one_eik: MyString
+  firm_one_address: MyString
+  firm_one_mol: MyString
+  firm_two_name: MyString
+  firm_two_vat: MyString
+  firm_two_eik: MyString
+  firm_two_address: MyString
+  firm_two_mol: MyString
+  invoice_number: MyString
+  paid: false
+
+two:
+  firm_one_name: MyString
+  firm_one_vat: MyString
+  firm_one_eik: MyString
+  firm_one_address: MyString
+  firm_one_mol: MyString
+  firm_two_name: MyString
+  firm_two_vat: MyString
+  firm_two_eik: MyString
+  firm_two_address: MyString
+  firm_two_mol: MyString
+  invoice_number: MyString
+  paid: false
