@@ -1,39 +1,103 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Common name:</strong>
+  <strong>Търговска марка:</strong>
   <%= @entity.common_name %>
 </p>
 
 <p>
-  <strong>Website:</strong>
+  <strong>Уебсайт:</strong>
   <%= @entity.website %>
 </p>
 
 <p>
-  <strong>Fb page:</strong>
+  <strong>Fb страница:</strong>
   <%= @entity.fb_page %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Описание:</strong>
   <%= @entity.description %>
 </p>
 
 <p>
-  <strong>Progress:</strong>
+  <strong>Прогрес:</strong>
   <%= @entity.progress %>
 </p>
 
 <p>
-  <strong>Comments:</strong>
+  <strong>Коментари:</strong>
   <%= @entity.comments %>
 </p>
 
 <p>
-  <strong>Country:</strong>
+  <strong>Държава:</strong>
   <%= @entity.country %>
 </p>
 
-<%= link_to 'Edit', edit_entity_path(@entity) %> |
-<%= link_to 'Back', entities_path %>
+
+<%= link_to 'Редактиране', edit_entity_path(@entity) %> |
+<%= link_to 'Назад към всички институции', entities_path %>
+
+<br>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Контакти</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Човек за контакти</th>
+      <th>Телефон</th>
+      <th>Email</th>
+      <th>Позиция в институцията</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entity.contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.person_name %></td>
+        <td><%= contact.person_phone %></td>
+        <td><%= contact.person_email %></td>
+        <td><%= contact.person_position %></td>
+
+        <td><%= link_to 'Редактирай', edit_entity_contact_path(@entity, contact) %></td>
+        <td><%= link_to 'Изтрий', entity_contact_path(@entity, contact), method: :delete, data: { confirm: 'Сигурни ли сте, че искате да изтриете контакта?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<h2>Добави контакт:</h2>
+<%= form_with(model: [ @entity, Contact.new ], local: true) do |form| %>
+  <p>
+    <%= form.label :person_name, "Име на човек за контакт:" %><br>
+    <%= form.text_field :person_name %>
+  </p>
+  <p>
+    <%= form.label :person_phone, "Телефон на човек за контакт:" %><br>
+    <%= form.text_area :person_phone %>
+  </p>
+  <p>
+    <%= form.label :person_email, "Имейл на човек за контакт:" %><br>
+    <%= form.text_area :person_email %>
+  </p>
+  <p>
+    <%= form.label :person_position, "Позиция на човек за контакт:" %><br>
+    <%= form.text_area :person_position %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+
+<%= link_to 'Редактиране', edit_entity_path(@entity) %> |
+<%= link_to 'Назад към всички институции', entities_path %>

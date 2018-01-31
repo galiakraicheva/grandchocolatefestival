@@ -4,7 +4,13 @@ class EntitiesController < ApplicationController
   # GET /entities
   # GET /entities.json
   def index
-    @entities = Entity.all
+    filters = {}
+    filters[:is_participant] = true if params['is_participant']
+    filters[:is_sponsor] = true if params['is_sponsor']
+    filters[:is_media] = true if params['is_media']
+    filters[:is_partner] = true if params['is_partner']
+
+    @entities = Entity.where(filters)
   end
 
   # GET /entities/1

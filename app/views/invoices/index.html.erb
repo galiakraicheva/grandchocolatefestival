@@ -5,16 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Firm one name</th>
-      <th>Firm one vat</th>
-      <th>Firm one eik</th>
-      <th>Firm one address</th>
-      <th>Firm one mol</th>
-      <th>Firm two name</th>
-      <th>Firm two vat</th>
-      <th>Firm two eik</th>
-      <th>Firm two address</th>
-      <th>Firm two mol</th>
+      <th>Firm name</th>
+      <th>Firm vat</th>
+      <th>Firm eik</th>
+      <th>Firm address</th>
+      <th>Firm mol</th>
       <th>Invoice number</th>
       <th>Paid</th>
       <th colspan="3"></th>
@@ -24,16 +19,11 @@
   <tbody>
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= invoice.firm_one_name %></td>
-        <td><%= invoice.firm_one_vat %></td>
-        <td><%= invoice.firm_one_eik %></td>
-        <td><%= invoice.firm_one_address %></td>
-        <td><%= invoice.firm_one_mol %></td>
-        <td><%= invoice.firm_two_name %></td>
-        <td><%= invoice.firm_two_vat %></td>
-        <td><%= invoice.firm_two_eik %></td>
-        <td><%= invoice.firm_two_address %></td>
-        <td><%= invoice.firm_two_mol %></td>
+        <td><%= invoice.firm_name %></td>
+        <td><%= invoice.firm_vat %></td>
+        <td><%= invoice.firm_eik %></td>
+        <td><%= invoice.firm_address %></td>
+        <td><%= invoice.firm_mol %></td>
         <td><%= invoice.invoice_number %></td>
         <td><%= invoice.paid %></td>
         <td><%= link_to 'Show', invoice %></td>

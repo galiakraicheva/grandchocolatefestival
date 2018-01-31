@@ -10,21 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117200857) do
+ActiveRecord::Schema.define(version: 20180124141636) do
 
   create_table "contacts", force: :cascade do |t|
-    t.string "person_one_name"
-    t.string "person_one_phone"
-    t.string "person_one_email"
-    t.string "person_one_position"
-    t.string "person_two_name"
-    t.string "person_two_phone"
-    t.string "person_two_email"
-    t.string "person_two_position"
-    t.string "person_three_name"
-    t.string "person_three_phone"
-    t.string "person_three_email"
-    t.string "person_three_position"
+    t.string "person_name"
+    t.string "person_phone"
+    t.string "person_email"
+    t.string "person_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "entity_id"
@@ -49,23 +41,12 @@ ActiveRecord::Schema.define(version: 20180117200857) do
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
-  create_table "external_users", force: :cascade do |t|
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "invoices", force: :cascade do |t|
-    t.string "firm_one_name"
-    t.string "firm_one_vat"
-    t.string "firm_one_eik"
-    t.string "firm_one_address"
-    t.string "firm_one_mol"
-    t.string "firm_two_name"
-    t.string "firm_two_vat"
-    t.string "firm_two_eik"
-    t.string "firm_two_address"
-    t.string "firm_two_mol"
+    t.string "firm_name"
+    t.string "firm_vat"
+    t.string "firm_eik"
+    t.string "firm_address"
+    t.string "firm_mol"
     t.string "invoice_number"
     t.string "invoice_amount"
     t.string "terms"
@@ -83,9 +64,7 @@ ActiveRecord::Schema.define(version: 20180117200857) do
     t.datetime "updated_at", null: false
     t.integer "entity_id"
     t.integer "questionnaire_id"
-    t.integer "external_user_id"
     t.index ["entity_id"], name: "index_participants_on_entity_id"
-    t.index ["external_user_id"], name: "index_participants_on_external_user_id"
     t.index ["questionnaire_id"], name: "index_participants_on_questionnaire_id"
   end
 

@@ -12,57 +12,62 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :common_name %>
+    <%= form.label :common_name, "Търговска марка или институция" %>
     <%= form.text_field :common_name, id: :entity_common_name %>
   </div>
 
   <div class="field">
-    <%= form.label :website %>
+    <%= form.label :website, "Уебсайт" %>
     <%= form.text_field :website, id: :entity_website %>
   </div>
 
   <div class="field">
-    <%= form.label :fb_page %>
+    <%= form.label :fb_page, "Fb страница" %>
     <%= form.text_field :fb_page, id: :entity_fb_page %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :description, "Описание" %>
     <%= form.text_field :description, id: :entity_description %>
   </div>
 
   <div class="field">
-    <%= form.label :progress %>
-    <%= form.text_field :progress, id: :entity_progress %>
+    <%= form.label :progress, "Прогрес" %>
+    <%= form.collection_select(:progress,
+        [["нямаме комуникация", "нямаме комуникация"],
+        ["изпратена покана", "изпратена покана"],
+        ["колебаят се", "колебаят се"],
+        ["потвърдили", "потвърдили"],
+        ["отказали", "отказали"]], :first, :second) %>
   </div>
 
   <div class="field">
-    <%= form.label :is_participant %>
+    <%= form.label :is_participant, "Потенциален участник?" %>
     <%= form.check_box :is_participant, id: :entity_is_participant %>
   </div>
 
   <div class="field">
-    <%= form.label :is_participant %>
+    <%= form.label :is_sponsor, "Потенциален спонсор?" %>
     <%= form.check_box :is_sponsor, id: :entity_is_sponsor %>
   </div>
 
   <div class="field">
-    <%= form.label :is_media %>
+    <%= form.label :is_media, "Медия?" %>
     <%= form.check_box :is_media, id: :entity_is_media %>
   </div>
 
   <div class="field">
-    <%= form.label :is_partner %>
+    <%= form.label :is_partner, "Потенциален партньор?" %>
     <%= form.check_box :is_partner, id: :entity_is_partner %>
   </div>
 
   <div class="field">
-    <%= form.label :comments %>
+    <%= form.label :comments, "Коментари" %>
     <%= form.text_field :comments, id: :entity_comments %>
   </div>
 
   <div class="field">
-    <%= form.label :country %>
+    <%= form.label :country, "Държава" %>
     <%= form.text_field :country, id: :entity_country %>
   </div>
 

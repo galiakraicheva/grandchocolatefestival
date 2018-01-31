@@ -1,22 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Contacts</h1>
+<h1>Контакти</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Person one name</th>
-      <th>Person one phone</th>
-      <th>Person one email</th>
-      <th>Person one position</th>
-      <th>Person two name</th>
-      <th>Person two phone</th>
-      <th>Person two email</th>
-      <th>Person two position</th>
-      <th>Person three name</th>
-      <th>Person three phone</th>
-      <th>Person three email</th>
-      <th>Person three position</th>
+      <th>Човек за контакти</th>
+      <th>Телефон</th>
+      <th>Email</th>
+      <th>Позиция в институцията</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,21 +17,14 @@
   <tbody>
     <% @contacts.each do |contact| %>
       <tr>
-        <td><%= contact.person_one_name %></td>
-        <td><%= contact.person_one_phone %></td>
-        <td><%= contact.person_one_email %></td>
-        <td><%= contact.person_one_position %></td>
-        <td><%= contact.person_two_name %></td>
-        <td><%= contact.person_two_phone %></td>
-        <td><%= contact.person_two_email %></td>
-        <td><%= contact.person_two_position %></td>
-        <td><%= contact.person_three_name %></td>
-        <td><%= contact.person_three_phone %></td>
-        <td><%= contact.person_three_email %></td>
-        <td><%= contact.person_three_position %></td>
-        <td><%= link_to 'Show', contact %></td>
-        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= contact.person_name %></td>
+        <td><%= contact.person_phone %></td>
+        <td><%= contact.person_email %></td>
+        <td><%= contact.person_position %></td>
+
+        <td><%= link_to 'Покажи', entity_contact %></td>
+        <td><%= link_to 'Редактирай', edit_entity_contact_path(contact) %></td>
+        <td><%= link_to 'Изтрий', contact, method: :delete, data: { confirm: 'Сигурни ли сте, че искате да изтриете контакта?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= link_to 'Нов контакт', new_entity_contact_path %>

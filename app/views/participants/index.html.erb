@@ -1,55 +1,68 @@
 <p id="notice"><%= notice %></p>
 <%
-body = "Zdraveite, edi kakvo si.
+body = "Здравейте,
 
-Това е кирилица. "
+Изпращаме Ви имейл с въпросник за уточняване на детайлите покрай участието Ви в Grand Chocolate Festival 2018.
 
-mail_data = {subject: "Pokana za uchastie на кирилица.", body: body}
+При въпроси, молим, не се колебайте да ни потърсите!
+
+Молим да попълните въпросника до 15 февруари:
+
+Линк:
+
+Поздрави,
+Екипът на Grand Chocolate Festival "
+
+mail_data = {subject: "Въпросник за изложители Grand Chocolate Festival", body: body}
 %>
 <a href="mailto:info@melodica-events.com?subject=test%20messed&body=testt%0amessed"> Test Mail Link</a>
 <a href="mailto:info@melodica-events.com?<%= mail_data.to_param.gsub("+", "%20") %>"> Test Mail Link</a>
 
-<h1>Participants</h1>
+<h1>Участник</h1>
+
+<%= link_to 'Нов участник', new_participant_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Stand number</th>
-      <th>Need chairs</th>
-      <th>Need table</th>
-      <th>Event contact person name</th>
-      <th>Event contact person phone</th>
-      <th>Hygiene person</th>
-      <th>Invitation number</th>
-      <th>Correspondence address</th>
-      <th>Badges number</th>
-      <th>Participate exhibit</th>
-      <th>Exhibit items</th>
-      <th>Participate lottary</th>
-      <th>Lottary items</th>
-      <th>Participate sampling</th>
-      <th>Sampling hours</th>
-      <th>Electricity consumption</th>
-      <th>Plugs number</th>
-      <th>Car registration number</th>
-      <th>Printed label</th>
-      <th>Gcf website name</th>
-      <th>Gcf website url</th>
-      <th>Gcf website description</th>
-      <th>Gcf website address</th>
-      <th>Participate presentation</th>
-      <th>Presentation topic</th>
-      <th>Presentation speaker</th>
-      <th>Participant comments</th>
-      <th>Terms of service</th>
+      <th>Щанд</th>
+      <th>Институция</th>
+      <th>Столове?</th>
+      <th>Маса?</th>
+      <th>Човек за контакт на събитието</th>
+      <th>Телефон на човек на събитието</th>
+      <th>Отговорник по хигиената</th>
+      <th>Брой покани</th>
+      <th>Адрес за кореспонденция</th>
+      <th>Брой баджове</th>
+      <th>Изложба?</th>
+      <th>Експонати</th>
+      <th>Лотария?</th>
+      <th>Награди</th>
+      <th>Дегустации?</th>
+      <th>Часове на дегустации</th>
+      <th>Електричество</th>
+      <th>Брой контакти</th>
+      <th>Кола номер</th>
+      <th>Принт табела</th>
+      <th>Gcf сайт: име</th>
+      <th>Gcf сайт: url</th>
+      <th>Gcf сайт: описание</th>
+      <th>Gcf сайт: адрес</th>
+      <th>Презентация?</th>
+      <th>Тема презентация</th>
+      <th>Лектор презентация</th>
+      <th>Коментари</th>
+      <th>Общи условия</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @participants.each do |participant| %>
+    <% @participants.order('stand_number').each do |participant| %>
       <tr>
         <td><%= participant.stand_number %></td>
+        <td><%= participant.entity.common_name %></td>
         <td><%= participant.questionnaire&.need_chairs %></td>
         <td><%= participant.questionnaire&.need_table %></td>
         <td><%= participant.questionnaire&.event_contact_person_name %></td>
@@ -77,10 +90,10 @@ mail_data = {subject: "Pokana za uchastie на кирилица.", body: body}
         <td><%= participant.questionnaire&.presentation_speaker %></td>
         <td><%= participant.questionnaire&.participant_comments %></td>
         <td><%= participant.questionnaire&.terms_of_service %></td>
-        <td><%= link_to "Questionnaire", edit_questionnaire_path(id: participant.access_token) %>
-        <td><%= link_to 'Show', participant %></td>
-        <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
-        <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Въпросник", edit_questionnaire_path(id: participant.access_token) %>
+        <td><%= link_to 'Покажи', participant %></td>
+        <td><%= link_to 'Редактирай', edit_participant_path(participant) %></td>
+        <td><%= link_to 'Изтрий', participant, method: :delete, data: { confirm: 'Сигурни ли сте, че искате да изтриете участника?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -88,4 +101,4 @@ mail_data = {subject: "Pokana za uchastie на кирилица.", body: body}
 
 <br>
 
-<%= link_to 'New Participant', new_participant_path %>
+<%= link_to 'Нов участник', new_participant_path %>

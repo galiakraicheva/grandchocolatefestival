@@ -1,23 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Entities</h1>
 
-<%= link_to 'New Entity', new_entity_path %>
+<%= form_tag(entities_path, method: "get") do %>
+  <%= check_box_tag(:is_participant) %>
+  <%= label_tag(:is_participant, "Потенциален участник") %>
+  <%= check_box_tag(:is_sponsor) %>
+  <%= label_tag(:is_sponsor, "Потенциален спонсор") %>
+  <%= check_box_tag(:is_media) %>
+  <%= label_tag(:is_media, "Медия") %>
+  <%= check_box_tag(:is_partner) %>
+  <%= label_tag(:is_partner, "Потенциален партньор") %>
+
+  <%= submit_tag("Филтрирай") %>
+<% end %>
+
+<h1>Търговски марки и институции</h1>
+
+<%= link_to 'Нова институция', new_entity_path %> |
+<%= link_to 'Участници', participants_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Common name</th>
-      <th>Website</th>
-      <th>Fb page</th>
-      <th>Description</th>
-      <th>Progress</th>
-      <th>Is Participant?</th>
-      <th>Is Sponsor?</th>
-      <th>Is Media?</th>
-      <th>Is Partner?</th>
-      <th>Comments</th>
-      <th>Country</th>
+      <th>Име на бранд</th>
+      <th>Уебсайт</th>
+      <th>Fb страница</th>
+      <th>Описание</th>
+      <th>Прогрес</th>
+      <th>Потенциален участник?</th>
+      <th>Потенциален спопсор?</th>
+      <th>Медия?</th>
+      <th>Потенциален партньор?</th>
+      <th>Коментари</th>
+      <th>Държава</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,9 +51,9 @@
         <td><%= entity.is_partner %></td>
         <td><%= entity.comments %></td>
         <td><%= entity.country %></td>
-        <td><%= link_to 'Show', entity %></td>
-        <td><%= link_to 'Edit', edit_entity_path(entity) %></td>
-        <td><%= link_to 'Destroy', entity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Покажи', entity %></td>
+        <td><%= link_to 'Редактирай', edit_entity_path(entity) %></td>
+        <td><%= link_to 'Изтрий', entity, method: :delete, data: { confirm: 'Сигурни ли сте, че искате да изтриете институцията?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +61,4 @@
 
 <br>
 
-<%= link_to 'New Entity', new_entity_path %>
+<%= link_to 'Нова институция', new_entity_path %>
