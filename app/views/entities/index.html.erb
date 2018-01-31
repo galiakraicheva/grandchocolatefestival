@@ -38,9 +38,9 @@
   </thead>
 
   <tbody>
-    <% @entities.each do |entity| %>
+    <% @entities.order('common_name').each do |entity| %>
       <tr>
-        <td><%= entity.common_name %></td>
+        <td><%= link_to entity.common_name, entity %></td>
         <td><%= entity.website %></td>
         <td><%= entity.fb_page %></td>
         <td><%= entity.description %></td>
@@ -51,7 +51,6 @@
         <td><%= entity.is_partner %></td>
         <td><%= entity.comments %></td>
         <td><%= entity.country %></td>
-        <td><%= link_to 'Покажи', entity %></td>
         <td><%= link_to 'Редактирай', edit_entity_path(entity) %></td>
         <td><%= link_to 'Изтрий', entity, method: :delete, data: { confirm: 'Сигурни ли сте, че искате да изтриете институцията?' } %></td>
       </tr>
