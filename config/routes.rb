@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :questionnaires
   resources :users
   resources :participants
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
   resources :entities do
     resources :contacts
   end
+
+  root to: "entity#index"
 
   get "/terms_of_service", to: "static_pages#terms_of_service", as: :terms_of_service
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
