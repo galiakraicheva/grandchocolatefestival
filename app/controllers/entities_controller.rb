@@ -12,6 +12,7 @@ class EntitiesController < ApplicationController
     filters[:is_partner] = true if params['is_partner']
 
     @entities = Entity.where(filters)
+    @user = User.find_by(params[:id])
   end
 
   # GET /entities/1
