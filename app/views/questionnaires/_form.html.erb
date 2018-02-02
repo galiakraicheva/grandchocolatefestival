@@ -1,4 +1,4 @@
-<%= form_with(model: questionnaire, url: questionnaire_path(id: participant.access_token), method: :put, local: true) do |form| %>
+<%= form_with(model: questionnaire, url: questionnaire_path(id: participant.access_token), method: :put, local: true, class: "questionnaire") do |form| %>
   <% if questionnaire.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(questionnaire.errors.count, "error") %> prohibited this questionnaire from being saved:</h2>
@@ -20,7 +20,7 @@
   <div class="field">
     <%= form.label :need_chairs, "В цената на щанда имате включени два стола. Ако предпочитате, можем да не ги слагаме.
     Ще ги използвате ли?" %>
-      <%= form.check_box :need_chairs, id: :questionnaire_need_chairs %><span class="labelText">Да, ще използваме столовете!</span>
+    <%= form.check_box :need_chairs, id: :questionnaire_need_chairs %><span class="labelText">Да, ще използваме столовете!</span>
   </div>
 
   <div class="field">

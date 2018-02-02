@@ -68,7 +68,7 @@
 
   <div class="field">
     <%= form.label :country, "Държава" %>
-    <%= form.text_field :country, id: :entity_country %>
+    <%= form.country_select(:country, priority_countries: ["BG", "GB", "DE"], priority_countries_divider: "~~~~~~") %>
   </div>
 
   <div class="actions">
