@@ -13,20 +13,20 @@
 
   <%= hidden_field_tag(:access_token, participant.access_token) %>
 
-  <p>Скъпи изложители, молим да попълните Вашия въпросник с информация за участието си в Grand Chocolate Festival
-  за настоящата година! Ако имате въпроси за попълването на въпросника, не се колебайте да ни потърсите на info@melodica-corporate.com.
+  <p>Скъпи изложители, молим да попълните Вашия въпросник с информация за участието си в <b>Grand Chocolate Festival</b>
+  за настоящата година! Ако имате въпроси за попълването на въпросника, не се колебайте да ни потърсите на <em>info@melodica-corporate.com</em>.
   Задължителните полета са отбелязани със звездичка.</p>
 
   <div class="field">
     <%= form.label :need_chairs, "В цената на щанда имате включени два стола. Ако предпочитате, можем да не ги слагаме.
     Ще ги използвате ли?" %>
-    <%= form.check_box :need_chairs, id: :questionnaire_need_chairs %>
+      <%= form.check_box :need_chairs, id: :questionnaire_need_chairs %><span class="labelText">Да, ще използваме столовете!</span>
   </div>
 
   <div class="field">
     <%= form.label :need_table, "В цената на щанда имате включена маса с размери 1.80 на 0.75 м с височина 0.73 м.
     Ако предпочитате, можем да не я слагаме. Ще използвате ли масата?" %>
-    <%= form.check_box :need_table, id: :questionnaire_need_table %>
+    <%= form.check_box :need_table, id: :questionnaire_need_table %><span class="labelText">Да, ще използваме масата!</span>
   </div>
 
   <div class="field">
@@ -77,7 +77,7 @@
   <div class="field">
     <%= form.label :participate_exhibit, "На фестивала, като всяка година, ще има изложба. Тя обикновено привлича добро
     медийно внимание. Експонатите са надписани. Ще предоставите ли продукт за изложбата? " %>
-    <%= form.check_box :participate_exhibit, id: :questionnaire_participate_exhibit %>
+    <%= form.check_box :participate_exhibit, id: :questionnaire_participate_exhibit %><span class="labelText">Да, ще участваме в изложбата!</span>
   </div>
 
   <div class="field">
@@ -89,7 +89,7 @@
     <%= form.label :participate_lottary, "На събитието и тази година ще има томбола. Тя се тегли в неделя от 17:45 часа
     и служи за край на събитието. За томболата ще има лайв стрийминг от събитието. Резултатите ще бъдат обявени
     на сайта на фестивала и на фейсбук страницата и събитието. Ще предоставяте ли награда за събитието?" %>
-    <%= form.check_box :participate_lottary, id: :questionnaire_participate_lottary %>
+    <%= form.check_box :participate_lottary, id: :questionnaire_participate_lottary %><span class="labelText">Да, ще предоставяме награда за томболата!</span>
   </div>
 
   <div class="field">
@@ -164,7 +164,7 @@
     да споделите нещо с посетителите, както и да направите демонстрации. Ще разполагате с лаптоп с операционна система Windows,
     проектор и маса. Всички презинтации и материали трябва да се предадат предварително на организатора в срок от една седмица
     преди началото на фестивала." %>
-    <%= form.check_box :participate_presentation, id: :questionnaire_participate_presentation %>
+    <%= form.check_box :participate_presentation, id: :questionnaire_participate_presentation %><span class="labelText">Да, ще участваме в презентациите!</span>
   </div>
 
   <div class="field">
@@ -189,10 +189,10 @@
     <%= form.label :terms_of_service, "Фирмата участник декларира, че фирма и
     целият персонал на щанда е запознат с Общите условия за участие във фестивала. Фирмата се задължава да спазва
     Общите условия и да гарантира изпълнение от страна на своите служители. *" %>
-    <%= form.check_box :terms_of_service, id: :questionnaire_terms_of_service %> Да, съгласен съм!
+    <%= form.check_box :terms_of_service, id: :questionnaire_terms_of_service %> <span class="labelText">Да, съгласни сме с общите условия!</span>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit(value = "Запази промените") %>
   </div>
 <% end %>
