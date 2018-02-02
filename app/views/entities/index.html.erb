@@ -1,12 +1,20 @@
 <%= form_tag(entities_path, method: "get") do %>
-  <%= check_box_tag(:is_participant) %>
-  <%= label_tag(:is_participant, "Потенциален участник") %>
-  <%= check_box_tag(:is_sponsor) %>
-  <%= label_tag(:is_sponsor, "Потенциален спонсор") %>
-  <%= check_box_tag(:is_media) %>
-  <%= label_tag(:is_media, "Медия") %>
-  <%= check_box_tag(:is_partner) %>
-  <%= label_tag(:is_partner, "Потенциален партньор") %>
+  <div class="inline_check_box">
+    <%= check_box_tag(:is_participant) %>
+    <%= label_tag(:is_participant, "Потенциален участник") %>
+  </div>
+  <div class="inline_check_box">
+    <%= check_box_tag(:is_sponsor) %>
+    <%= label_tag(:is_sponsor, "Потенциален спонсор") %>
+  </div>
+  <div class="inline_check_box">
+    <%= check_box_tag(:is_media) %>
+    <%= label_tag(:is_media, "Медия") %>
+  </div>
+  <div class="inline_check_box">
+    <%= check_box_tag(:is_partner) %>
+    <%= label_tag(:is_partner, "Потенциален партньор") %>
+  </div>
 
   <%= submit_tag("Филтрирай") %>
 <% end %>
