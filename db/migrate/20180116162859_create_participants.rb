@@ -9,6 +9,6 @@ class CreateParticipants < ActiveRecord::Migration[5.1]
     end
 
     add_reference :participants, :entity, foreign_key: true
-    add_reference :participants, :questionnaire, foreign_key: true
+    
   end
 end
