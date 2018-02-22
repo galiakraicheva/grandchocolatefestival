@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Участник</h1>
 
 <%= link_to 'Нов участник', new_participant_path %>
@@ -8,6 +10,7 @@
       <th>Щанд</th>
       <th>Институция</th>
       <th>Адрес на въпросника</th>
+      <th>Имейл с въпросник</th>
       <th>Столове?</th>
       <th>Маса?</th>
       <th>Човек за контакт на събитието</th>
@@ -45,7 +48,39 @@
       <tr>
         <td><%= participant.stand_number %></td>
         <td><%= participant.entity.common_name %></td>
-        <td><%= "grandchocolatefestival.herokuapp.com/" + participant.access_token %></td>
+        <td><%= "https://grandchocolatefestival.herokuapp.com/" + participant.access_token %></td>
+
+        <td>
+          <% link = "https://grandchocolatefestival.herokuapp.com/" + participant.access_token %>
+          <%
+          body = "Здравейте,
+
+          Изпращаме Ви имейл с въпросник за уточняване на детайлите покрай участието Ви в Grand Chocolate Festival 2018.
+
+          При въпроси, молим, не се колебайте да ни потърсите!
+
+          Молим да попълните въпросника до 28 февруари:
+
+          Линк: #{link}
+
+          Молим да обърнете внимание на прикачените файлове. Описанието на това за какво служат е в линка с изисквания на БАБХ, който ще намерите във въпросника и прикачен по-долу.
+
+          Молим да ни върнете имейл с:
+          1) Удостоверението Ви за регистрация в БАБХ (ако не сте ни го пратили предишни години). Не се отнася за участниците,
+          които не се регулират от  БАБХ.
+          2) Сканирана попълнена наредба за отговорник по хигиената.
+          3) Лого, ако го нямаме от предишните години или се различава от миналите години.
+
+          Очаквайте още следващите две седмици до събитието:
+          1) Имейл от нас с маркетинг съвети за представянето Ви по време на изложението.
+          2) Уточняваш имейл с часовете за зареждане и аварийните изходи, от които ще осъществи то.
+
+          Поздрави,
+          Екипът на Grand Chocolate Festival "
+
+          mail_data = {subject: "Въпросник за изложители Grand Chocolate Festival", body: body}%>
+          <a href="mailto:info@melodica-events.com?<%= mail_data.to_param.gsub("+", "%20") %>"> Персонален имейл темплейт</a>
+          </td>
         <td><%= participant.questionnaire&.need_chairs %></td>
         <td><%= participant.questionnaire&.need_table %></td>
         <td><%= participant.questionnaire&.event_contact_person_name %></td>
@@ -86,24 +121,7 @@
 
 <%= link_to 'Нов участник', new_participant_path %>
 
-<p id="notice"><%= notice %></p>
-<%
-body = "Здравейте,
-
-Изпращаме Ви имейл с въпросник за уточняване на детайлите покрай участието Ви в Grand Chocolate Festival 2018.
-
-При въпроси, молим, не се колебайте да ни потърсите!
-
-Молим да попълните въпросника до 23 февруари:
-
-Линк: #{}
 
 
 
-Поздрави,
-Екипът на Grand Chocolate Festival "
-
-mail_data = {subject: "Въпросник за изложители Grand Chocolate Festival", body: body}
-%>
 <a href="mailto:info@melodica-events.com?subject=test%20messed&body=testt%0amessed"> Test Mail Link</a>
-<a href="mailto:info@melodica-events.com?<%= mail_data.to_param.gsub("+", "%20") %>"> Test Mail Link</a>
