@@ -7,6 +7,7 @@
     <tr>
       <th>Щанд</th>
       <th>Институция</th>
+      <th>Адрес на въпросника</th>
       <th>Столове?</th>
       <th>Маса?</th>
       <th>Човек за контакт на събитието</th>
@@ -44,6 +45,7 @@
       <tr>
         <td><%= participant.stand_number %></td>
         <td><%= participant.entity.common_name %></td>
+        <td><%= "grandchocolatefestival.herokuapp.com/" + participant.access_token %></td>
         <td><%= participant.questionnaire&.need_chairs %></td>
         <td><%= participant.questionnaire&.need_table %></td>
         <td><%= participant.questionnaire&.event_contact_person_name %></td>
@@ -71,7 +73,6 @@
         <td><%= participant.questionnaire&.presentation_speaker %></td>
         <td><%= participant.questionnaire&.participant_comments %></td>
         <td><%= participant.questionnaire&.terms_of_service %></td>
-        <td><%= "grandchocolatefestival.herokuapp.com/" + participant.access_token %></td>
         <td><%= link_to "Въпросник", edit_questionnaire_path(id: participant.access_token) %>
         <td><%= link_to 'Покажи', participant %></td>
         <td><%= link_to 'Редактирай', edit_participant_path(participant) %></td>
