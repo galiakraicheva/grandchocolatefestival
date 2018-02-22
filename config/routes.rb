@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   root to: "entities#index"
 
   get "/terms_of_service", to: "static_pages#terms_of_service", as: :terms_of_service
+  get "/terms_of_babh", to: "static_pages#terms_of_babh", as: :terms_of_babh
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
