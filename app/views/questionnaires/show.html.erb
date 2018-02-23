@@ -1,140 +1,148 @@
-<p id="notice"><%= notice %></p>
+
+<h1>Вашите отговори</h1>
+
+<p>Благодарим за времето и за попълнения въпросник! Не забравяйте да изпратите и Вашето удостоверение за
+  регистрация в БАБХ и наредбата за отговорник по хигиената на имейла на организаторите!</p>
+
+<p>По-долу можете да видите всички Ваши отговори. Можете да ги редактирате до 5 март 2018 г. Редактирането става като
+кликнете на линка с въпросника и попълните отново въпросите, които искате да редактирате. При въпроси, молим,
+не се колебайте да ни потърсите! До скоро! </p>
 
 <p>
-  <strong>Need chairs:</strong>
+  <strong>Използване на столове:</strong>
   <%= @questionnaire.need_chairs %>
 </p>
 
 <p>
-  <strong>Need table:</strong>
+  <strong>Използване на маси:</strong>
   <%= @questionnaire.need_table %>
 </p>
 
 <p>
-  <strong>Event contact person name:</strong>
+  <strong>Човек за контакти на събитието:</strong>
   <%= @questionnaire.event_contact_person_name %>
 </p>
 
 <p>
-  <strong>Event contact person phone:</strong>
+  <strong>Телефон на човека за контакт на събитието:</strong>
   <%= @questionnaire.event_contact_person_phone %>
 </p>
 
 <p>
-  <strong>Hygiene person:</strong>
+  <strong>Отговорник по хигиената:</strong>
   <%= @questionnaire.hygiene_person %>
 </p>
 
 <p>
-  <strong>Invitation number:</strong>
+  <strong>Брой покани:</strong>
   <%= @questionnaire.invitation_number %>
 </p>
 
 <p>
-  <strong>Correspondence address:</strong>
+  <strong>Адрес на кореспонденция:</strong>
   <%= @questionnaire.correspondence_address %>
 </p>
 
 <p>
-  <strong>Badges number:</strong>
+  <strong>Брой баджове:</strong>
   <%= @questionnaire.badges_number %>
 </p>
 
 <p>
-  <strong>Participate exhibit:</strong>
+  <strong>Участие в изложба:</strong>
   <%= @questionnaire.participate_exhibit %>
 </p>
 
 <p>
-  <strong>Exhibit items:</strong>
+  <strong>Артикули за изложба:</strong>
   <%= @questionnaire.exhibit_items %>
 </p>
 
 <p>
-  <strong>Participate lottary:</strong>
+  <strong>Участие в томбола:</strong>
   <%= @questionnaire.participate_lottary %>
 </p>
 
 <p>
-  <strong>Lottary items:</strong>
+  <strong>Награди за томбола:</strong>
   <%= @questionnaire.lottary_items %>
 </p>
 
 <p>
-  <strong>Participate sampling:</strong>
+  <strong>Провеждане на дегустации:</strong>
   <%= @questionnaire.participate_sampling %>
 </p>
 
 <p>
-  <strong>Sampling hours:</strong>
+  <strong>Часове на дегустации:</strong>
   <%= @questionnaire.sampling_hours %>
 </p>
 
 <p>
-  <strong>Electricity consumption:</strong>
+  <strong>Консумация на електричество:</strong>
   <%= @questionnaire.electricity_consumption %>
 </p>
 
 <p>
-  <strong>Plugs number:</strong>
+  <strong>Брой контакти:</strong>
   <%= @questionnaire.plugs_number %>
 </p>
 
 <p>
-  <strong>Car registration number:</strong>
+  <strong>Регистрационен номер на превозно средство:</strong>
   <%= @questionnaire.car_registration_number %>
 </p>
 
 <p>
-  <strong>Printed label:</strong>
+  <strong>Принт табела за щанд:</strong>
   <%= @questionnaire.printed_label %>
 </p>
 
 <p>
-  <strong>Gcf website name:</strong>
+  <strong>Име за уебсайта на фестивала:</strong>
   <%= @questionnaire.gcf_website_name %>
 </p>
 
 <p>
-  <strong>Gcf website url:</strong>
+  <strong>Уебсайт адрес:</strong>
   <%= @questionnaire.gcf_website_url %>
 </p>
 
 <p>
-  <strong>Gcf website description:</strong>
+  <strong>Описание за сайта на фестивала:</strong>
   <%= @questionnaire.gcf_website_description %>
 </p>
 
 <p>
-  <strong>Gcf website address:</strong>
+  <strong>Адрес:</strong>
   <%= @questionnaire.gcf_website_address %>
 </p>
 
 <p>
-  <strong>Participate presentation:</strong>
+  <strong>Участие в презентации:</strong>
   <%= @questionnaire.participate_presentation %>
 </p>
 
 <p>
-  <strong>Presentation topic:</strong>
+  <strong>Тема на презентации:</strong>
   <%= @questionnaire.presentation_topic %>
 </p>
 
 <p>
-  <strong>Presentation speaker:</strong>
+  <strong>Лектор за презентация:</strong>
   <%= @questionnaire.presentation_speaker %>
 </p>
 
 <p>
-  <strong>Participant comments:</strong>
+  <strong>Коментари:</strong>
   <%= @questionnaire.participant_comments %>
 </p>
 
 <p>
-  <strong>Terms of service:</strong>
+  <strong>Съгласие с общи условия и изисквания на БАБХ:</strong>
   <%= @questionnaire.terms_of_service %>
 </p>
 
 <% unless @questionnaire.new_record? %>
-<%=link_to 'Редактирай', edit_questionnaire_path(id: @participant.access_token) %> |
+<%=link_to 'Редактирай', edit_questionnaire_path(id: @participant.access_token) %> 
 <% end %>
