@@ -48,10 +48,9 @@
       <tr>
         <td><%= participant.stand_number %></td>
         <td><%= participant.entity.common_name %></td>
-        <td><%= "https://grandchocolatefestival.herokuapp.com/" + participant.access_token %></td>
+        <td><%= edit_questionnaire_url(id: participant.access_token) %></td>
 
         <td>
-          <% link = "https://grandchocolatefestival.herokuapp.com/" + participant.access_token %>
           <%
           body = "Здравейте,
 
@@ -59,9 +58,9 @@
 
           При въпроси, молим, не се колебайте да ни потърсите!
 
-          Молим да попълните въпросника до 28 февруари:
+          Молим да попълните въпросника до 28 февруари (ако Ви излизат попълнени отговори, това са отговорите Ви от миналата година):
 
-          Линк: #{link}
+          Линк: #{edit_questionnaire_url(id: participant.access_token)}
 
           Молим да обърнете внимание на прикачените файлове. Описанието на това за какво служат е в линка с изисквания на БАБХ, който ще намерите във въпросника и прикачен по-долу.
 
@@ -79,7 +78,7 @@
           Екипът на Grand Chocolate Festival "
 
           mail_data = {subject: "Въпросник за изложители Grand Chocolate Festival", body: body}%>
-          <a href="mailto:info@melodica-events.com?<%= mail_data.to_param.gsub("+", "%20") %>"> Персонален имейл темплейт</a>
+          <a href="mailto:<%= participant.entity.contacts.first&.person_email %>?<%= mail_data.to_param.gsub("+", "%20") %>"> Персонален имейл темплейт</a>
           </td>
         <td><%= participant.questionnaire&.need_chairs %></td>
         <td><%= participant.questionnaire&.need_table %></td>
