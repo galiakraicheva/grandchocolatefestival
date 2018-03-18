@@ -1,0 +1,42 @@
+<h1>Списък на участници в Grand Chocolate Festival</h1>
+
+<p class="hidden-print">Принтирай настоящата страница:</p>
+
+<button class="hidden-print" onclick="myFunction()">Print</button>
+
+<script>
+function myFunction() {
+    window.print();
+}
+</script>
+
+
+<h3>Изложители за събота и неделя</h3>
+
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th>Щанд</th>
+      <th>Институция</th>
+      <th>Човек за контакт на събитието</th>
+      <th>Телефон на човек на събитието</th>
+      <th>Кола номер</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participants.order('stand_number').each do |participant| %>
+      <tr>
+        <td><%= participant.stand_number %></td>
+        <td><%= participant.entity.common_name %></td>
+        <td><%= participant.questionnaire&.event_contact_person_name %></td>
+        <td><%= participant.questionnaire&.event_contact_person_phone %></td>
+        <td><%= participant.questionnaire&.car_registration_number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
