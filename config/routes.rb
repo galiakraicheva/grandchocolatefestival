@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :participants
   resources :invoices
-  resource :iec
-  resource :babh
+  get '/iec', to: 'iec#index'
+  get '/babh', to: 'babh#index'
 
   resources :entities do
     resources :contacts
