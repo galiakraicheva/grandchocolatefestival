@@ -1,0 +1,99 @@
+<%= form_with(model: feedback, url: feedback_path(id: participant.access_token), method: :put, local: true, class: "feedback") do |form| %>
+  <% if feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% feedback.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>Скъпи изложители, благодарим за възможността да работим заедно за четвъртото издание на <b>Grand Chocolate Festival</b>
+  Посещаемостта на събитието беше 7500 човека, като те бяха разпределени в два дни на 99 щанда и на близо 3000 кв.м площ.
+  Със сигурност това е годината, в която имаше най-много пространство и най-много позитивна обратна връзка от страна на
+  посетителите, за което благодарим на всички, които имаха участие в организацията и протичането на събитието.
+  За първа година масовата обратна връзка беше, че изложителите са били изключително отзивчиви, имало е най-много атракции за
+  посетителите и е имало дегустации на повечето щандове. Голяма част от посетителите бяха очаровани от това, че им се е
+  отделило повече време на щандовете и са имали възможността да говорят с хората и да научат повече за шоколадите, които
+  се представят. Благодарим изключително много за това и за проявеното отношение. </p>
+
+  <p>Разбира се, освен посетителските мнения, за нас е също толкова важно да чуем Вашето мнение за събитието, което ще ни
+  помогне при организацията на петото юбилейно издание на фестивала за София. Полетата не са задължителни, но колкото
+  повече бъдат попълнени, толкова повече информация ще имаме за Вашето мнение. Не се колебайте и да ни отставите по-дълги
+  коментари и в полето за допълнителни коментари. </p>
+
+  <br/>
+
+
+  <div class="field">
+    <%= form.label :year_participation, "За коя година участвате в Grand Chocolate Festival?" %>
+    <%= form.text_field :year_participation, id: :feedback_year_participation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stand_size, "Как ви се стори площта от 6.6 кв. метра за представяне на Вашите продукти?" %>
+    <%= form.text_field :stand_size, id: :feedback_stand_size %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stand_price, "Как Ви се стори цената от 29.17 лева на кв. метър на ден за ранна регистрация и 31.06 лева на кв. метър на ден за късна регистрация?" %>
+    <%= form.text_field :stand_price, id: :feedback_stand_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :communication_with_organizer, "Как оценявате комуникацията си с организатора на събитието?" %>
+    <%= form.text_field :communication_with_organizer, id: :feedback_communication_with_organizer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ad_coverage, "Как Ви се стори включената в цената на щанда допълнителна реклама на бранда Ви в социалните мрежи на събитието: във фейсбук страницата, фейсбук събитието, инстаграм и сайта на фестивала?" %>
+    <%= form.text_field :ad_coverage, id: :feedback_ad_coverage %>
+  </div>
+
+  <div class="field">
+    <% form.label :media_coverage %>
+    <% form.text_field :media_coverage, id: :feedback_media_coverage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :communication_with_visitors, "Как оценявате възможността си да комуникирате с посетителите на събитието по време на самото събитие?" %>
+    <%= form.text_field :communication_with_visitors, id: :feedback_communication_with_visitors %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visitor_interest, "Как оценявате заинтересоваността на посетителите към изложителите? Имаха ли интерес посетителите да разберат повече от Вас за продуктите Ви и това, което предлагате на щанда си?" %>
+    <%= form.text_field :visitor_interest, id: :feedback_visitor_interest %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visitor_number, "Как оценявате посещаемостта от 7500 човека?" %>
+    <%= form.text_field :visitor_number, id: :feedback_visitor_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stand_attractions, "Предлагахте ли на Вашия щанд някакви атракции, демонстрации или презентации за посетителите? Демонстрирахте ли някакви различни продукти от тези, които се предлагат в търговските Ви обекти, например, скулптори от шоколад, фигури, декорация и т.н.?" %>
+    <%= form.text_field :stand_attractions, id: :feedback_stand_attractions %>
+  </div>
+
+  <div class="field">
+    <%= form.label :participation_improvements, "Имате ли желание за промените нещо във Вашето участие, с което организаторът може да съдейства при организацията на следващия фестивал?" %>
+    <%= form.text_field :participation_improvements, id: :feedback_participation_improvements %>
+  </div>
+
+  <div class="field">
+    <%= form.label :organization_improvements, "Какви организационни препоръки бихте дали на организатора на събитието за следващото му издание?" %>
+    <%= form.text_field :organization_improvements, id: :feedback_organization_improvements %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments, "Коментари:" %>
+    <%= form.text_area :comments, id: :feedback_comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit(value = "Изпрати") %>
+  </div>
+<% end %>

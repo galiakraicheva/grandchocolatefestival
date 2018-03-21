@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   ActiveAdmin.routes(self)
   resources :questionnaires
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   resources :invoices
   get '/iec', to: 'iec#index'
   get '/babh', to: 'babh#index'
+  resources :feedbacks
 
   resources :entities do
     resources :contacts

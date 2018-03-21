@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Feedbacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Щанд</th>
+      <th>Институция</th>
+      <th>Адрес на форма за обратна връзка</th>
+      <th>Имейл с форма за обратна връзка</th>
+      <th>Year participation</th>
+      <th>Stand size</th>
+      <th>Stand price</th>
+      <th>Communication with organizer</th>
+      <th>Ad coverage</th>
+      <th>Media coverage</th>
+      <th>Communication with visitors</th>
+      <th>Visitor interest</th>
+      <th>Visitor number</th>
+      <th>Stand attractions</th>
+      <th>Participation improvements</th>
+      <th>Organization improvements</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participants.order('stand_number').each do |participant| %>
+      <tr>
+        <tr>
+          <td><%= participant.stand_number %></td>
+          <td><%= participant.entity.common_name %></td>
+          <td><%= edit_feedback_url(id: participant.access_token) %></td>
+
+          <td>
+            <%
+            body = "Скъпи изложители,
+
+Благодарим за участието Ви в четвъртото издание на Grand Chocolate Festival!
+
+Изпращаме Ви традиционната форма за обратна връзка, в която да ни дадете своите идеи и коментари, които биха ни били полезни при реализирането на петото издание на шоколадовия фестивал.
+
+При въпроси, молим, не се колебайте да ни потърсите!
+
+Линк: #{edit_feedback_url(id: participant.access_token)}
+
+Поздрави,
+    Екипът на Grand Chocolate Festival "
+
+            mail_data = {subject: "Обратна връзка за Grand Chocolate Festival", body: body}%>
+            <a href="mailto:<%= participant.entity.contacts.first&.person_email %>?<%= mail_data.to_param.gsub("+", "%20") %>"> Персонален имейл темплейт</a>
+            </td>
+        <td><%= participant.feedback&.year_participation %></td>
+        <td><%= participant.feedback&.stand_size %></td>
+        <td><%= participant.feedback&.stand_price %></td>
+        <td><%= participant.feedback&.communication_with_organizer %></td>
+        <td><%= participant.feedback&.ad_coverage %></td>
+        <td><%= participant.feedback&.media_coverage %></td>
+        <td><%= participant.feedback&.communication_with_visitors %></td>
+        <td><%= participant.feedback&.visitor_interest %></td>
+        <td><%= participant.feedback&.visitor_number %></td>
+        <td><%= participant.feedback&.stand_attractions %></td>
+        <td><%= participant.feedback&.participation_improvements %></td>
+        <td><%= participant.feedback&.organization_improvements %></td>
+        <td><%= participant.feedback&.comments %></td>
+        <td><%= link_to 'Show', edit_feedback_path(id: participant.access_token)  %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feedback', new_feedback_path %>

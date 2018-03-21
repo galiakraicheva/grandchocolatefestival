@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202104821) do
+ActiveRecord::Schema.define(version: 20180320070604) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -55,6 +55,24 @@ ActiveRecord::Schema.define(version: 20180202104821) do
     t.index ["user_id"], name: "index_entities_on_user_id"
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "year_participation"
+    t.string "stand_size"
+    t.string "stand_price"
+    t.string "communication_with_organizer"
+    t.string "ad_coverage"
+    t.string "media_coverage"
+    t.string "communication_with_visitors"
+    t.string "visitor_interest"
+    t.string "visitor_number"
+    t.string "stand_attractions"
+    t.string "participation_improvements"
+    t.string "organization_improvements"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "invoices", force: :cascade do |t|
     t.string "firm_name"
     t.string "firm_vat"
@@ -78,7 +96,9 @@ ActiveRecord::Schema.define(version: 20180202104821) do
     t.datetime "updated_at", null: false
     t.integer "entity_id"
     t.integer "questionnaire_id"
+    t.integer "feedback_id"
     t.index ["entity_id"], name: "index_participants_on_entity_id"
+    t.index ["feedback_id"], name: "index_participants_on_feedback_id"
     t.index ["questionnaire_id"], name: "index_participants_on_questionnaire_id"
   end
 

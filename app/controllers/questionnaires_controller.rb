@@ -2,6 +2,7 @@ class QuestionnairesController < ApplicationController
   before_action :set_questionnaire, only: [:show, :edit, :update]
 
 
+
   def new
     @participant = Participant.find_by!(access_token: params[:access_token])
     @questionnaire = @participant.questionnaire || Questionnaire.new

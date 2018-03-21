@@ -20,8 +20,8 @@
       <p class="alert"><%= alert %></p>
     <% end %>
 
-    <%= render "layouts/header" unless (controller_name == "questionnaires" || controller_name == "static_pages")%>
-    <%= render "layouts/navbar" unless (controller_name == "questionnaires" || controller_name == "static_pages")%>
+    <%= render "layouts/header" unless (controller_name == "questionnaires" || controller_name == "static_pages" || controller_name == "feedbacks")%>
+    <%= render "layouts/navbar" unless (controller_name == "questionnaires" || controller_name == "static_pages" || controller_name == "feedbacks")%>
 
     <%= yield %>
   </body>
